@@ -7,7 +7,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class FelineClassMockTest {
@@ -38,11 +37,9 @@ class FelineClassMockTest {
 
     @Test
     void testEatMeatReturnsExpectedFoodList() throws Exception {
-        Feline felineMock = mock(Feline.class);
+        Feline feline = new Feline();
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
-        when(felineMock.eatMeat()).thenReturn(expectedFood);
-        List<String> actualFood = felineMock.eatMeat();
+        List<String> actualFood = feline.eatMeat();
         assertEquals(expectedFood, actualFood);
-        verify(felineMock).eatMeat();
     }
 }
