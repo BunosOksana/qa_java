@@ -35,12 +35,6 @@ class LionClassMockTest {
     }
 
     @Test
-    void testCheckHasManeTrueWhenSexLionMale() throws Exception {
-        Lion lion = new Lion(feline, "Самец");
-        assertTrue(lion.doesHaveMane());
-    }
-
-    @Test
     void testCheckHasManeFalseWhenSexLionFemale() throws Exception {
         Lion lion = new Lion(feline, "Самка");
         assertFalse(lion.doesHaveMane());
@@ -50,5 +44,14 @@ class LionClassMockTest {
     void testInvalidSexThrowsException() {
         assertThrows(Exception.class, () ->
                 new Lion(feline, "Используйте допустимые значения пола животного - самец или самка"));
+    }
+
+    @Test
+    void testLionConstructorWithBoolean() {
+        Lion lion = new Lion(feline, true);
+        assertTrue(lion.doesHaveMane());
+
+        Lion lioness = new Lion(feline, false);
+        assertFalse(lioness.doesHaveMane());
     }
 }
