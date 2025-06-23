@@ -45,13 +45,4 @@ class LionClassMockTest {
         assertThrows(Exception.class, () ->
                 new Lion(feline, "Используйте допустимые значения пола животного - самец или самка"));
     }
-
-    @Test
-    void testLionConstructorWithBoolean() {
-        Lion lion = new Lion(feline, true);
-        assertTrue(lion.doesHaveMane());
-
-        Lion lioness = new Lion(feline, false);
-        assertFalse(lioness.doesHaveMane());
-    }
 }

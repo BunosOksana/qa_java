@@ -8,11 +8,6 @@ public class Lion {
 
     Feline feline;
 
-    public Lion(Feline feline, boolean hasMane) {
-        this.feline = feline;
-        this.hasMane = hasMane;
-    }
-
     public Lion(Feline feline, String sex) throws Exception {
         this.feline = feline;
         if ("Самец".equals(sex)) {
